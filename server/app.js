@@ -14,7 +14,10 @@ app.use(bodyParser.json());
 const Mongo = require("./routes/mongo");
 app.use("/mongo", Mongo);
 
-const MongoServers = require("./routes/serversRoute");
-app.use("/mongoServers", MongoServers);
+const serversRoute = require("./routes/serversRoute");
+app.use("/servers", serversRoute);
+
+const StatusRoute = require("./routes/statusRoute");
+app.use("/servers/status", StatusRoute);
 
 app.listen(4000);

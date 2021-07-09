@@ -1,7 +1,7 @@
 <div
   class="card mb-3"
   style="max-width: 18rem"
-  [ngClass]="server.Status === 0 ? 'border-danger' : 'border-success'"
+  [ngClass]="server.Status == 0 ? 'border-danger' : 'border-success'"
 >
   <div class="card-header">
     <div class="row">
@@ -11,14 +11,14 @@
           <input
             (change)="
               serversService.updateStatus('/servers/status/updateStatus', {
-                ID: server.ID,
+                _id: server._id,
                 Status: server.Status
               })
             "
             class="form-check-input"
             type="checkbox"
             id="flexSwitchCheckDefault"
-            [checked]="server.Status === 0 ? '' : 'checked'"
+            [checked]="server.Status == 0 ? '' : 'checked'"
           />
         </div>
       </div>
@@ -26,12 +26,13 @@
   </div>
   <div
     class="card-body"
-    [ngClass]="server.Status === 0 ? 'text-danger' : 'text-success'"
+    [ngClass]="server.Status == 0 ? 'text-danger' : 'text-success'"
   >
     <h5 class="card-title">
-      {{ server.Status === 0 ? "Offline" : "Online" }}
+      {{ server.Status == 0 ? "Offline" : "Online" }}
     </h5>
     <p class="card-text">Company Name: {{ server.CompanyName }}</p>
+    <p class="card-text">ID: {{ server._id }}</p>
     <p class="card-text">IP: {{ server.IP }}</p>
     <div>created At:</div>
     <p class="card-text">

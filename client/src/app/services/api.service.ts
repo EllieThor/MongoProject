@@ -12,12 +12,14 @@ export class ApiService {
     public settingsService: SettingsService,
     public errorService: ErrorsService
   ) {}
-
+  //TODO: {responseType: 'text' }  אני הוספתי
   createPostService(url: string, ob: any) {
     return new Promise(async (resolve, reject) => {
       try {
         await this.httpClient
-          .post(this.settingsService.baseUrl + url, ob)
+          .post(this.settingsService.baseUrl + url, ob, {
+            responseType: 'text',
+          })
           .subscribe(
             (data) => {
               resolve(data);

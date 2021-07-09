@@ -5,7 +5,7 @@
         | filteredServers: serversService._searchInput
     "
     [ngClass]="
-      serversService._onlyOnline == true && server.Status === 0
+      serversService._onlyOnline == true && server.Status == 0
         ? 'hidden'
         : 'col-lg-3 col-md-6 col-12'
     "
