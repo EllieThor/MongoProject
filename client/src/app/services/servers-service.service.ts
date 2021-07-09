@@ -21,10 +21,9 @@ export class ServersServiceService {
 
   async updateStatus(url: string, ob: any) {
     this.result = (await this.apiService.createPostService(url, ob)) as any;
-    console.log('result@@@@@: ', this.result);
+    console.log('result: ', this.result);
     console.log('url: ', url, '  ob: ', ob);
-    // if (this.result.ok == 1)
-    this.getAllServers('/servers/getAllServers');
+    if (this.result.ok == 1) this.getAllServers('/servers/getAllServers');
   }
 
   async onlyOnline() {
