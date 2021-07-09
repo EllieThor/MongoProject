@@ -1,0 +1,35 @@
+<div>
+  <form class="d-flex">
+    <input
+      [(ngModel)]="serversService._searchInput"
+      class="form-control me-2"
+      placeholder="Search"
+      [ngModelOptions]="{ standalone: true }"
+    />
+  </form>
+</div>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <label for="recentlyCreated">
+        sort by recentlyCreated
+        <input type="checkbox" name="recentlyCreated" id="recentlyCreated" />
+      </label>
+    </div>
+    <div class="col-6">
+      <label for="onlineServer">
+        show only online server
+        <input
+          type="checkbox"
+          name="onlineServer"
+          id="onlineServer"
+          (change)="serversService.onlyOnline()"
+        />
+      </label>
+    </div>
+  </div>
+  <div class="row p-2">
+    <app-servers-list></app-servers-list>
+  </div>
+</div>
