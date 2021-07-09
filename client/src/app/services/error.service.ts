@@ -28,9 +28,9 @@ export class ErrorsService {
       text: 'Something went wrong, please try again',
       icon: 'error',
       // title: 'Server error !!',
-      showCancelButton: true,
-      showConfirmButton: false,
-      // confirmButtonColor: '#dc3545',
+      // showCancelButton: true,
+      showConfirmButton: true,
+      confirmButtonColor: '#dc3545',
       // timer: 6500,
       title: 'Custom animation with Animate.css',
       showClass: {
